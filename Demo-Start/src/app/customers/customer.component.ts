@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { Customer } from './customer';
 
 @Component({
@@ -9,9 +9,9 @@ import { Customer } from './customer';
 })
 export class CustomerComponent implements OnInit {
   customer = new Customer();
-  customerForm:FormGroup;
+  customerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder) {
 
   }
 
@@ -20,6 +20,8 @@ export class CustomerComponent implements OnInit {
       firstName: ["", [Validators.required, Validators.minLength(3)]],
       lastName: ["", [Validators.required, Validators.maxLength(50)]],
       email: ["", [Validators.required, Validators.email]],
+      phone: [""],
+      notification: ["email"],
       sendCatalog: true
     })
   }
@@ -38,11 +40,21 @@ export class CustomerComponent implements OnInit {
     })
   }
 
-  PatchValue():void {
+  PatchValue(): void {
     this.customerForm.patchValue({
       firstName: "onlyFname",
       lastName: "onlyLname"
     })
   }
- 
+
+  setNotification(notifyVia: string): void {
+    const phoneControl = this.customerForm.get('phone');
+    if (notifyVia === 'text') {
+      phoneControl.setValidators([Validators.required, Validators.minLength(10)])
+    } else {
+      phoneControl.clearValidators();
+    }
+    phoneControl.updateValueAndValidity();
+  }
+
 }
