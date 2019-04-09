@@ -234,7 +234,7 @@
                  [ngClass]="{'is-invalid': (customerForm.get('phone').touched || customerForm.get('phone').dirty) && !customerForm.get('phone').valid }" />
           <span class="invalid-feedback">
             <span *ngIf="customerForm.get('phone').errors?.required">
-              Please enter your email address.
+              Please enter your phone number.
             </span>
           </span>
         </div>
@@ -262,7 +262,6 @@
         <label class="col-md-2 col-form-label pt-0">sent Notifications</label>
         <div class="form-check form-check-inline">
           <input class="form-check-input"
-                 (click)="setNotification('email')"
                  formControlName="notification"
                  type="radio"
                  id="emailRadioId"
@@ -272,7 +271,6 @@
         </div>
         <div class="form-check form-check-inline">
           <input class="form-check-input"
-                 (click)="setNotification('text')"
                  formControlName="notification"
                  type="radio"
                  id="textRadioId"

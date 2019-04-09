@@ -55,6 +55,10 @@ export class CustomerComponent implements OnInit {
       rating: [null, ratingRange(1, 5)],
       sendCatalog: true
     })
+
+    this.customerForm.get('notification').valueChanges.subscribe((value) => {
+      this.setNotification(value);
+    });
   }
 
   save() {
