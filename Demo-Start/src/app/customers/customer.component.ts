@@ -27,4 +27,21 @@ export class CustomerComponent implements OnInit {
     console.log(this.customerForm);
     console.log('Saved: ' + JSON.stringify(this.customerForm.value));
   }
+
+  SetValueF(): void {
+    this.customerForm.setValue({
+      firstName: "SetValueFN",
+      lastName: "SetValueLN",
+      email: "SetValueEM",
+      sendCatalog: false
+    })
+  }
+
+  PatchValue():void {
+    this.customerForm.patchValue({
+      firstName: "onlyFname",
+      lastName: "onlyLname"
+    })
+  }
+ 
 }
