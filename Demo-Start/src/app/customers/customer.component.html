@@ -4,18 +4,13 @@
   </div>
 
   <div class="card-body">
-    <form novalidate
-          [formGroup]="customerForm">
+    <form novalidate [formGroup]="customerForm">
       <div class="form-group row mb-2">
-        <label class="col-md-2 col-form-label"
-               for="firstNameId">First Name</label>
+        <label class="col-md-2 col-form-label" for="firstNameId">First Name</label>
         <div class="col-md-8">
-          <input class="form-control"
-                 formControlName="firstName"
-                 id="firstNameId"
-                 type="text"
-                 placeholder="First Name (required)"
-                 [ngClass]="{'is-invalid':  customerForm.get('firstName').touched || ((customerForm.get('firstName').dirty) && !customerForm.get('firstName').valid) }" />
+          <input class="form-control" formControlName="firstName" id="firstNameId" type="text"
+            placeholder="First Name (required)"
+            [ngClass]="{'is-invalid':  customerForm.get('firstName').touched || ((customerForm.get('firstName').dirty) && !customerForm.get('firstName').valid) }" />
           <span class="invalid-feedback">
             <span *ngIf="customerForm.get('firstName').errors?.required">
               Please enter your first name.
@@ -28,15 +23,11 @@
       </div>
 
       <div class="form-group row mb-2">
-        <label class="col-md-2 col-form-label"
-               for="lastNameId">Last Name</label>
+        <label class="col-md-2 col-form-label" for="lastNameId">Last Name</label>
         <div class="col-md-8">
-          <input class="form-control"
-                 id="lastNameId"
-                 type="text"
-                 placeholder="Last Name (required)"
-                 formControlName="lastName"
-                 [ngClass]="{'is-invalid': (customerForm.get('lastName').touched || customerForm.get('lastName').dirty) && !customerForm.get('lastName').valid }" />
+          <input class="form-control" id="lastNameId" type="text" placeholder="Last Name (required)"
+            formControlName="lastName"
+            [ngClass]="{'is-invalid': (customerForm.get('lastName').touched || customerForm.get('lastName').dirty) && !customerForm.get('lastName').valid }" />
           <span class="invalid-feedback">
             <span *ngIf="customerForm.get('lastName').errors?.required">
               Please enter your last name.
@@ -49,15 +40,10 @@
       </div>
       <div formGroupName="emailGroup">
         <div class="form-group row mb-2">
-          <label class="col-md-2 col-form-label"
-                 for="emailId">Email</label>
+          <label class="col-md-2 col-form-label" for="emailId">Email</label>
           <div class="col-md-8">
-            <input class="form-control"
-                   id="emailId"
-                   type="email"
-                   placeholder="Email (required)"
-                   formControlName="email"
-                   [ngClass]="{'is-invalid': emailMessage }" />
+            <input class="form-control" id="emailId" type="email" placeholder="Email (required)" formControlName="email"
+              [ngClass]="{'is-invalid': emailMessage }" />
             <span class="invalid-feedback">
               {{ emailMessage }}
             </span>
@@ -65,15 +51,11 @@
         </div>
 
         <div class="form-group row mb-2">
-          <label class="col-md-2 col-form-label"
-                 for="emailConfirmId">EmailConfirm</label>
+          <label class="col-md-2 col-form-label" for="emailConfirmId">EmailConfirm</label>
           <div class="col-md-8">
-            <input class="form-control"
-                   id="emailConfirmId"
-                   type="email"
-                   placeholder="emailConfirm (required)"
-                   formControlName="emailConfirm"
-                   [ngClass]="{'is-invalid': 
+            <input class="form-control" id="emailConfirmId" type="email" placeholder="emailConfirm (required)"
+              formControlName="emailConfirm"
+              [ngClass]="{'is-invalid': 
                    customerForm.get('emailGroup').errors || 
                    ((customerForm.get('emailGroup.emailConfirm').touched || customerForm.get('emailGroup.emailConfirm').dirty) && !customerForm.get('emailGroup.emailConfirm').valid) }" />
             <span class="invalid-feedback">
@@ -95,10 +77,8 @@
         <div class="col-md-8">
           <div class="form-check">
             <label class="form-check-label">
-              <input class="form-check-input"
-                     id="sendCatalogId"
-                     type="checkbox"
-                     formControlName="sendCatalog"> Send me your catalog
+              <input class="form-check-input" id="sendCatalogId" type="checkbox" formControlName="sendCatalog"> Send me
+              your catalog
             </label>
           </div>
         </div>
@@ -112,76 +92,50 @@
               <div class="col-md-8">
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input class="form-check-input"
-                           id="addressType1Id"
-                           type="radio"
-                           value="home"
-                           formControlName="addressType"> Home
+                    <input class="form-check-input" id="addressType1Id" type="radio" value="home"
+                      formControlName="addressType"> Home
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input class="form-check-input"
-                           id="addressType1Id"
-                           type="radio"
-                           value="work"
-                           formControlName="addressType"> Work
+                    <input class="form-check-input" id="addressType1Id" type="radio" value="work"
+                      formControlName="addressType"> Work
                   </label>
                 </div>
                 <div class="form-check form-check-inline">
                   <label class="form-check-label">
-                    <input class="form-check-input"
-                           id="addressType1Id"
-                           type="radio"
-                           value="other"
-                           formControlName="addressType"> Other
+                    <input class="form-check-input" id="addressType1Id" type="radio" value="other"
+                      formControlName="addressType"> Other
                   </label>
                 </div>
               </div>
             </div>
 
             <div class="form-group row mb-2">
-              <label class="col-md-2 col-form-label"
-                     for="{{ 'street1Id' + idx }}">Street Address 1</label>
+              <label class="col-md-2 col-form-label" for="{{ 'street1Id' + idx }}">Street Address 1</label>
               <div class="col-md-8">
-                <input class="form-control"
-                       id="{{ 'street1Id' + idx }}"
-                       type="text"
-                       placeholder="Street address"
-                       formControlName="street1">
-              </div>
-            </div>
-
-            <!-- <div class="form-group row mb-2">
-              <label class="col-md-2 col-form-label"
-                     for="street2Id">Street Address 2</label>
-              <div class="col-md-8">
-                <input class="form-control"
-                       id="street2Id"
-                       type="text"
-                       placeholder="Street address (second line)"
-                       formControlName="street2">
+                <input class="form-control" id="{{ 'street1Id' + idx }}" type="text" placeholder="Street address"
+                  formControlName="street1">
               </div>
             </div>
 
             <div class="form-group row mb-2">
-              <label class="col-md-2 col-form-label"
-                     for="cityId">City, State, Zip Code</label>
+              <label class="col-md-2 col-form-label" for="{{ 'street2Id' + idx }}">Street Address 2</label>
+              <div class="col-md-8">
+                <input class="form-control" id="{{ 'street2Id' + idx }}" type="text"
+                  placeholder="Street address (second line)" formControlName="street2">
+              </div>
+            </div>
+
+            <div class="form-group row mb-2">
+              <label class="col-md-2 col-form-label" for="cityId">City, State, Zip Code</label>
               <div class="col-md-3">
-                <input class="form-control"
-                       id="cityId"
-                       type="text"
-                       placeholder="City"
-                       formControlName="city">
+                <input class="form-control" id="{{ 'cityId' + idx }}" type="text" placeholder="City"
+                  formControlName="city">
               </div>
               <div class="col-md-3">
-                <select class="form-control"
-                        id="stateId"
-                        formControlName="state">
-                  <option value=""
-                          disabled
-                          selected
-                          hidden>Select a State...</option>
+                <select class="form-control" id="{{ 'stateId' + idx }}" formControlName="state">
+                  <option value="" disabled selected hidden>Select a State...</option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -193,28 +147,19 @@
                 </select>
               </div>
               <div class="col-md-2">
-                <input class="form-control"
-                       id="zipId"
-                       type="number"
-                       placeholder="Zip Code"
-                       formControlName="zip">
+                <input class="form-control" id="{{ 'zipId' + idx }}" type="number" placeholder="Zip Code"
+                  formControlName="zip">
               </div>
-            </div> -->
+            </div>
           </div>
         </div>
-
       </div>
 
       <div class="form-group row mb-2">
-        <label class="col-md-2 col-form-label"
-               for="phoneId">phone</label>
+        <label class="col-md-2 col-form-label" for="phoneId">phone</label>
         <div class="col-md-8">
-          <input class="form-control"
-                 id="phoneId"
-                 type="phone"
-                 placeholder="phone"
-                 formControlName="phone"
-                 [ngClass]="{'is-invalid': (customerForm.get('phone').touched || customerForm.get('phone').dirty) && !customerForm.get('phone').valid }" />
+          <input class="form-control" id="phoneId" type="phone" placeholder="phone" formControlName="phone"
+            [ngClass]="{'is-invalid': (customerForm.get('phone').touched || customerForm.get('phone').dirty) && !customerForm.get('phone').valid }" />
           <span class="invalid-feedback">
             <span *ngIf="customerForm.get('phone').errors?.required">
               Please enter your phone number.
@@ -224,15 +169,10 @@
       </div>
 
       <div class="form-group row mb-2">
-        <label class="col-md-2 col-form-label"
-               for="ratingId">rating</label>
+        <label class="col-md-2 col-form-label" for="ratingId">rating</label>
         <div class="col-md-8">
-          <input class="form-control"
-                 id="ratingId"
-                 type="number"
-                 placeholder="rating"
-                 formControlName="rating"
-                 [ngClass]="{'is-invalid': (customerForm.get('rating').touched || customerForm.get('rating').dirty) && !customerForm.get('rating').valid }" />
+          <input class="form-control" id="ratingId" type="number" placeholder="rating" formControlName="rating"
+            [ngClass]="{'is-invalid': (customerForm.get('rating').touched || customerForm.get('rating').dirty) && !customerForm.get('rating').valid }" />
           <span class="invalid-feedback">
             <span *ngIf="customerForm.get('rating').errors?.range">
               Please enter your rating Range correct.
@@ -244,32 +184,20 @@
       <div class="form-group row mb-2">
         <label class="col-md-2 col-form-label pt-0">sent Notifications</label>
         <div class="form-check form-check-inline">
-          <input class="form-check-input"
-                 formControlName="notification"
-                 type="radio"
-                 id="emailRadioId"
-                 value="email">
-          <label class="form-check-label"
-                 for="emailRadioId">email</label>
+          <input class="form-check-input" formControlName="notification" type="radio" id="emailRadioId" value="email">
+          <label class="form-check-label" for="emailRadioId">email</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input"
-                 formControlName="notification"
-                 type="radio"
-                 id="textRadioId"
-                 value="text">
-          <label class="form-check-label"
-                 for="textRadioId">text</label>
+          <input class="form-check-input" formControlName="notification" type="radio" id="textRadioId" value="text">
+          <label class="form-check-label" for="textRadioId">text</label>
         </div>
       </div>
 
       <div class="form-group row mb-2">
         <div class="offset-md-2 col-md-4">
-          <button class="btn btn-primary mr-3"
-                  type="submit"
-                  style="width:80px"
-                  [title]="customerForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
-                  [disabled]="!customerForm.valid">
+          <button class="btn btn-primary mr-3" type="submit" style="width:80px"
+            [title]="customerForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+            [disabled]="!customerForm.valid">
             Save
           </button>
         </div>
