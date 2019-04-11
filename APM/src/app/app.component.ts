@@ -7,8 +7,11 @@ import { Component } from '@angular/core';
       <a class='navbar-brand'>{{pageTitle}}</a>
       <ul class='navbar-nav'>
         <li class='nav-item'><a class='nav-link' routerLinkActive='active'
-              [routerLink]="['/welcome']">Home</a>
+              [routerLink]="['/todoList']">TodoList</a>
         </li>
+        <li class='nav-item'><a class='nav-link' routerLinkActive='active'
+              [routerLink]="['/welcome']">Home</a>
+        </li>        
         <li class='nav-item'><a class='nav-link' routerLinkActive='active' [routerLinkActiveOptions]="{exact: true}"
               [routerLink]="['/products']">Product List</a>
         </li>
