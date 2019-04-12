@@ -18,7 +18,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'todoList', component: TodoListComponent}
+      { path: 'todoList', component: TodoListComponent},
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
